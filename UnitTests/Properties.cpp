@@ -13,6 +13,9 @@ namespace UnitTests
 			Assert::AreEqual(2, BigInteger(2).countBits());
 			Assert::AreEqual(1, BigInteger(1).countBits());
 			Assert::AreEqual(0, BigInteger().countBits());
+
+			//needs test cases for numbers that require 2 ints to represent...
+			//Implement after Addition is implemented
 		}
 	};
 }

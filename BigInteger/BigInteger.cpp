@@ -16,7 +16,8 @@ BigInteger::BigInteger(int num)
 
 BigInteger::BigInteger(unsigned int num)
 {
-
+	sign = false;
+	this->mNumber.push_back(sign);
 }
 
 BigInteger::BigInteger(const BigInteger & copy)
@@ -27,6 +28,7 @@ BigInteger::BigInteger(const BigInteger & copy)
 
 BigInteger::~BigInteger()
 {
+	mNumber.clear();
 }
 
 BigInteger BigInteger::Add(const BigInteger & lhs, const BigInteger & rhs)

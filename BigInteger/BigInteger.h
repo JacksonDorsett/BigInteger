@@ -3,7 +3,7 @@
 class BigInteger
 {
 private:
-	std::vector<int> mNumber;
+	std::vector<unsigned int> mNumber;
 	bool sign;
 public:
 	BigInteger();

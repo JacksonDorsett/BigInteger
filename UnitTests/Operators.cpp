@@ -3,8 +3,9 @@
 #include "../BigInteger/BigInteger.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace UnitTests
+namespace TestOperators
 {		
+	
 	TEST_CLASS(TestEquivalance)
 	{
 	public:
@@ -25,5 +26,16 @@ namespace UnitTests
 			
 		}
 		//add more test as more constructors are added
+	};
+
+	TEST_CLASS(TestAssignment)
+	{
+		TEST_METHOD(TestNormalAssignment)
+		{
+			BigInteger bint = BigInteger(4);
+			Assert::IsTrue(bint == BigInteger(4));
+			BigInteger oint(bint);
+			Assert::IsTrue(oint == bint);
+		}
 	};
 }
