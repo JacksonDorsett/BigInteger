@@ -11,6 +11,7 @@ namespace UnitTests
 		
 		TEST_METHOD(TestTrueValues)
 		{
+			Assert::IsTrue(BigInteger() == BigInteger(-0));
 			Assert::IsTrue(BigInteger() == BigInteger(0));
 			Assert::IsTrue(BigInteger(-0) == BigInteger(0));
 			Assert::IsTrue(BigInteger(100) == BigInteger(100));

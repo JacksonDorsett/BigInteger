@@ -10,7 +10,7 @@ BigInteger::BigInteger()
 
 BigInteger::BigInteger(int num)
 {
-	this->sign = num >= 0;
+	this->sign = num > 0;
 	this->mNumber.push_back(abs(num));
 }
 
@@ -63,6 +63,12 @@ bool operator==(const BigInteger & lhs, const BigInteger & rhs)
 	}
 	return true;
 }
+
+bool operator!=(const BigInteger &lhs, const BigInteger &rhs)
+{
+	return !(lhs == rhs);
+}
+
 
 bool operator>(const BigInteger & lhs, const BigInteger & rhs)
 {

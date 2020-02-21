@@ -13,6 +13,7 @@ public:
 	
 	//Equivalance operators
 	friend bool operator==(const BigInteger &lhs, const BigInteger &rhs);
+	friend bool operator!=(const BigInteger &lhs, const BigInteger &rhs);
 	friend bool operator>(const BigInteger &lhs, const BigInteger &rhs);
 	friend bool operator<(const BigInteger &lhs, const BigInteger &rhs);
 	friend bool operator>=(const BigInteger &lhs, const BigInteger &rhs);
@@ -28,6 +29,7 @@ public:
 };
 
 bool operator==(const BigInteger &lhs, const BigInteger &rhs);
+bool operator!=(const BigInteger &lhs, const BigInteger &rhs);
 bool operator>(const BigInteger &lhs, const BigInteger &rhs);
 bool operator<(const BigInteger &lhs, const BigInteger &rhs);
 bool operator>=(const BigInteger &lhs, const BigInteger &rhs);
