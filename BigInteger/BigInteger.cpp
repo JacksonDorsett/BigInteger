@@ -19,6 +19,12 @@ BigInteger::BigInteger(unsigned int num)
 
 }
 
+BigInteger::BigInteger(const BigInteger & copy)
+{
+	this->mNumber = copy.mNumber;
+	this->sign = copy.sign;
+}
+
 BigInteger::~BigInteger()
 {
 }
@@ -41,6 +47,27 @@ BigInteger BigInteger::Multiply(const BigInteger & lhs, const BigInteger & rhs)
 BigInteger BigInteger::Divide(const BigInteger & lhs, const BigInteger & rhs)
 {
 	return BigInteger();
+}
+
+
+//properties
+int BigInteger::countBits() const
+{
+	int i;
+	int mostSigNum = mNumber[mNumber.size() - 1];
+	if (mostSigNum == 0)
+		i = 0;
+	else
+	{
+		for (i = 7; i >= 0; --i)
+		{
+			if ((mNumber[mNumber.size() - 1] >> i) == 1)
+				break;
+		}
+		i++;
+	}
+	
+	return sizeof(int) * 8 * (mNumber.size() - 1) + i;
 }
 
 bool operator==(const BigInteger & lhs, const BigInteger & rhs)
@@ -89,3 +116,11 @@ bool operator<=(const BigInteger & lhs, const BigInteger & rhs)
 {
 	return false;
 }
+
+BigInteger & BigInteger::operator=(const BigInteger &rhs)
+{
+	this->mNumber = rhs.mNumber;
+	this->sign = rhs.sign;
+	return *this;
+}
+
