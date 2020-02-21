@@ -1,6 +1,8 @@
 #include "BigInteger.h"
 int main()
 {
-	BigInteger(2).countBits();
+	long le = 90000000000000;
+	BigInteger l(le);
+	l;
 	return 0;
 }

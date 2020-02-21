@@ -10,7 +10,7 @@ BigInteger::BigInteger()
 
 BigInteger::BigInteger(int num)
 {
-	this->sign = num > 0;
+	this->sign = num < 0;
 	this->mNumber.push_back(abs(num));
 }
 
@@ -18,6 +18,22 @@ BigInteger::BigInteger(unsigned int num)
 {
 	sign = false;
 	this->mNumber.push_back(sign);
+}
+
+BigInteger::BigInteger(long num)
+{
+	this->sign = num < 0;
+	num = (unsigned)abs((long long)num);
+	unsigned int* p = (unsigned int*) &num;
+	mNumber.push_back(p[0]);
+	mNumber.push_back(p[1]);
+
+}
+BigInteger::BigInteger(unsigned long num)
+{
+	unsigned int* p = (unsigned int*)&num;
+	mNumber.push_back(p[0]);
+	mNumber.push_back(p[1]);
 }
 
 BigInteger::BigInteger(const BigInteger & copy)

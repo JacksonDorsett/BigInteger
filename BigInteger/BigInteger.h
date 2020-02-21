@@ -9,6 +9,9 @@ public:
 	BigInteger();
 	BigInteger(int num);
 	BigInteger(unsigned int num);
+	BigInteger(long num);
+	BigInteger(unsigned long num);
+	
 
 	BigInteger(const BigInteger &copy);
 	
